@@ -16,15 +16,23 @@ var getKeyword = function(){
   callAPI(keyword);
 };
 
+var moveToTop = function(){
+  var title = document.querySelector("h1");
+  title.style.marginTop = "0";
+};
+
 var startSearch= function(){
   document.querySelector("#searchBox").addEventListener("keypress", function(key){
     if (key.keyCode === 13) {
       document.location.href = "#top";
-
+      moveToTop();
       getKeyword();
     }
   });
-  document.querySelector(".fa-search").addEventListener("click", getKeyword)
+  document.querySelector(".fa-search").addEventListener("click", function(){
+    moveToTop();
+    getKeyword();
+  })
 };
 
 
