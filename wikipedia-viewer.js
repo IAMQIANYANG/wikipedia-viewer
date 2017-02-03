@@ -38,7 +38,7 @@ var startSearch= function(){
 
 var callAPI = function(keyword){
 
-  var url = "https://crossorigin.me/https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=" + keyword;
+  var url = "https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=" + keyword;
 
   var listRequest = new XMLHttpRequest();
   listRequest.open('GET', url, true);
@@ -51,14 +51,14 @@ var callAPI = function(keyword){
     }
   };
   listRequest.onerror = function () {
-    document.querySelector(".searchResult").innerHTML = "<p>Sorry we were unable to reach the weather server..</p>"
+    document.querySelector(".searchResult").innerHTML = "<p>Sorry we were unable to reach the wikipedia server..</p>"
   };
 
   listRequest.send();
 };
 
 var displayResult = function(){
-
+w
   function generateHTML (element, index, array) {
     var title = "<h4>" + element["title"] + "</h4>" ;
     var text = "<p>" + element["snippet"] + "</p>";
