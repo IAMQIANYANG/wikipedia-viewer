@@ -42,7 +42,7 @@ var callAPI = function(keyword){
 
   var listRequest = new XMLHttpRequest();
   listRequest.open('GET', url, true);
-
+  listRequest.setRequestHeader( 'Access-Control-Allow-Origin', '*');
   listRequest.onload = function () {
     if (listRequest.status >= 200 && listRequest.status < 400) {
       list = JSON.parse(listRequest.responseText)["query"]["search"];
