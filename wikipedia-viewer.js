@@ -38,11 +38,10 @@ var startSearch= function(){
 
 var callAPI = function(keyword){
 
-  var url = "https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=" + keyword;
+  var url = "https://en.wikipedia.org/w/api.php?action=query&list=search&&origin=*&format=json&srsearch=" + keyword;
 
   var listRequest = new XMLHttpRequest();
   listRequest.open('GET', url, true);
-  listRequest.setRequestHeader( 'Access-Control-Allow-Origin', '*');
   listRequest.onload = function () {
     if (listRequest.status >= 200 && listRequest.status < 400) {
       list = JSON.parse(listRequest.responseText)["query"]["search"];
@@ -58,7 +57,6 @@ var callAPI = function(keyword){
 };
 
 var displayResult = function(){
-w
   function generateHTML (element, index, array) {
     var title = "<h4>" + element["title"] + "</h4>" ;
     var text = "<p>" + element["snippet"] + "</p>";
