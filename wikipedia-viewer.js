@@ -38,7 +38,7 @@ var startSearch= function(){
 
 var callAPI = function(keyword){
 
-  var url = "https://en.wikipedia.org/w/api.php?action=query&list=search&&origin=*&format=json&srsearch=" + keyword;
+  var url = "https://en.wikipedia.org/w/api.php?action=query&list=search&origin=*&format=json&srsearch=" + keyword;
 
   var listRequest = new XMLHttpRequest();
   listRequest.open('GET', url, true);
